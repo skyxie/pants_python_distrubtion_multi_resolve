@@ -8,6 +8,7 @@ python_distribution(
     name="dist",
     dependencies=[
         ":lib@resolve=resolve_a",
+        ":lib@resolve=resolve_b",
     ],
     provides=setup_py(
         name="pants-test-shared",
