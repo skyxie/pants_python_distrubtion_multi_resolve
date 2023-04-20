@@ -1,0 +1,33 @@
+[GLOBAL]
+pants_version = "2.15.0"
+
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.python.lint.black",
+  "pants.backend.python.lint.isort",
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.9.*"]
+enable_resolves = true
+
+[python.resolves]
+resolve_a = "build-support/resolve_a.lockfile"
+resolve_b = "build-support/resolve_b.lockfile"
+
+[black]
+interpreter_constraints = ["CPython>=3.9.*"]
+lockfile = "build-support/black.lockfile"
+version = "black==22.3.0"
+
+[source]
+root_patterns = ["src", "test"]
+
+[test]
+output = "all"
+
+[pytest]
+args="-vv"
+
+[anonymous-telemetry]
+enabled = false
